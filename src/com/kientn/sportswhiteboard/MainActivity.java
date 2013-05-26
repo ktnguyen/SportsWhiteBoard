@@ -14,13 +14,15 @@ public class MainActivity extends Activity {
     int counterRed;
     int gameBlue;
     int gameRed;
-	TextView blueText, redText, gameRedText, gameBlueText;
+	TextView blueText, redText, gameRedText, gameBlueText, dnRed, dnBlue;
 	Button bpBlue, bpRed;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+        Player player = new Player();
+
 		counterBlue = 0;
 		counterRed = 0;
         gameBlue = 0;
@@ -31,6 +33,11 @@ public class MainActivity extends Activity {
 		redText = (TextView) findViewById(R.id.RedPlayer);
         gameBlueText = (TextView) findViewById(R.id.GamePointBlue);
         gameRedText = (TextView) findViewById(R.id.GamePointRed);
+        dnBlue = (TextView) findViewById(R.id.display_bluename);
+        dnRed = (TextView) findViewById(R.id.display_redname);
+
+        dnBlue.setText(player.getBluePlayer().toString());
+        dnRed.setText(player.getRedPlayer().toString());
 		
 		bpBlue.setOnClickListener(new View.OnClickListener() {
 			

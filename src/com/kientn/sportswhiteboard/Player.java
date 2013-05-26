@@ -27,10 +27,7 @@ public class Player {
     }
 
     public Player(String bp, String rp) {
-        counterBlue = 0;
-        counterRed = 0;
-        gameBlue = 0;
-        gameRed = 0;
+
         bluePlayer = bp;
         redPlayer = rp;
     }
