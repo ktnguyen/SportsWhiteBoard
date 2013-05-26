@@ -17,9 +17,16 @@ public class Player {
     int gameRed;
     String bluePlayer, redPlayer;
 
+    public Player() {
+        counterBlue = 0;
+        counterRed = 0;
+        gameBlue = 0;
+        gameRed = 0;
+        bluePlayer = "";
+        redPlayer = "";
+    }
 
-    public Player(String bp, String rp)
-    {
+    public Player(String bp, String rp) {
         counterBlue = 0;
         counterRed = 0;
         gameBlue = 0;
@@ -27,29 +34,38 @@ public class Player {
         bluePlayer = bp;
         redPlayer = rp;
     }
-    public int getCounterBlue(){
+
+    public int getCounterBlue() {
         return counterBlue;
     }
 
-    public int getCounterRed(){
+    public int getCounterRed() {
         return counterRed;
     }
 
-    public int getGameBlue(){
+    public int getGameBlue() {
         return gameBlue;
     }
 
-    public int getGameRed(){
+    public int getGameRed() {
         return gameRed;
     }
 
-    public String getBluePlayer(){
+    public String getBluePlayer() {
         return bluePlayer;
     }
 
+    public void setBluePlayer(String blueName) {
+        bluePlayer = blueName;
+    }
 
+    public String getRedPlayer() {
+        return redPlayer;
+    }
 
-
+    public void setRedPlayer(String redName) {
+        redPlayer = redName;
+    }
 
 
 }

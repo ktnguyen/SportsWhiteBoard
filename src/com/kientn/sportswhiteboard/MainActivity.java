@@ -38,21 +38,23 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
                 if(counterBlue > 11 && (counterBlue - counterRed) == 2 && counterRed > 11) {
-                    gameBlue++;
                     counterBlue = 0;
                     counterRed = 0;
+                    gameBlue++;
                 }
 
                 else if (counterBlue == 11 && counterRed < 10)  {
-                    gameBlue++;
                     counterBlue = 0;
                     counterRed = 0;
+                    gameBlue++;
                 }
                 else
                     counterBlue++;
 
                 blueText.setText(counterBlue + " ");
                 gameBlueText.setText(gameBlue + " ");
+                redText.setText(" " + counterRed);
+                gameRedText.setText(" " + gameRed);
 			}
 		});
 		
@@ -60,14 +62,22 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-                if(counterRed > 11 && (counterRed - counterBlue) == 2 && counterBlue > 11)
+                if(counterRed > 11 && (counterRed - counterBlue) == 2 && counterBlue > 11){
+                    counterBlue = 0;
+                    counterRed = 0;
                     gameRed++;
-                else if (counterRed == 11 && counterBlue < 10)
+                }
+                else if (counterRed == 11 && counterBlue < 10){
+                    counterBlue = 0;
+                    counterRed = 0;
                     gameRed++;
+                }
                 else
                     counterRed++;
 				redText.setText(" " + counterRed);
                 gameRedText.setText(" " + gameRed);
+                blueText.setText(counterBlue + " ");
+                gameBlueText.setText(gameBlue + " ");
 				
 			}
 		});
