@@ -18,10 +18,7 @@ public class Player {
     String bluePlayer, redPlayer;
 
     public Player() {
-        counterBlue = 0;
-        counterRed = 0;
-        gameBlue = 0;
-        gameRed = 0;
+
         bluePlayer = "";
         redPlayer = "";
     }

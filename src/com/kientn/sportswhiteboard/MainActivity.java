@@ -14,6 +14,8 @@ public class MainActivity extends Activity {
     int counterRed;
     int gameBlue;
     int gameRed;
+
+    private Player player = new Player();
 	TextView blueText, redText, gameRedText, gameBlueText, dnRed, dnBlue;
 	Button bpBlue, bpRed;
 	
@@ -21,7 +23,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-        Player player = new Player();
+
 
 		counterBlue = 0;
 		counterRed = 0;
@@ -38,6 +40,8 @@ public class MainActivity extends Activity {
 
         dnBlue.setText(player.getBluePlayer().toString());
         dnRed.setText(player.getRedPlayer().toString());
+
+
 		
 		bpBlue.setOnClickListener(new View.OnClickListener() {
 			

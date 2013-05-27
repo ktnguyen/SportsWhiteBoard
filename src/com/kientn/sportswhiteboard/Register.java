@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class Register extends Activity {
     EditText addBlue, addRed;
     Button bConfirm;
-    Player player = new Player();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +33,21 @@ public class Register extends Activity {
         bConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setBluePlayer(addBlue.getText().toString());
-                player.setRedPlayer(addRed.getText().toString());
+                String blueName = addBlue.getText().toString();
+                String redName = addRed.getText().toString();
+                Player player = new Player(blueName, redName);
+
+
+
+
+                /*player.setBluePlayer(addBlue.getText().toString());
+                player.setRedPlayer(addRed.getText().toString());*/
+
 
                 Intent openMainAct = new Intent("com.kientn.sportswhiteboard.MAINACTIVITY");
                 startActivity(openMainAct);
+
+
             }
         });
     }
