@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    Bundle myValues;
 	int counterBlue;
     int counterRed;
     int gameBlue;
@@ -38,8 +39,13 @@ public class MainActivity extends Activity {
         dnBlue = (TextView) findViewById(R.id.display_bluename);
         dnRed = (TextView) findViewById(R.id.display_redname);
 
-        dnBlue.setText(player.getBluePlayer().toString());
-        dnRed.setText(player.getRedPlayer().toString());
+        myValues = getIntent().getExtras();
+
+        /*dnBlue.setText(player.getBluePlayer().toString());
+        dnRed.setText(player.getRedPlayer().toString());*/
+
+        dnBlue.setText(myValues.getString("blue"));
+        dnRed.setText(myValues.getString("red"));
 
 
 		
@@ -70,29 +76,30 @@ public class MainActivity extends Activity {
 		});
 		
 		bpRed.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-                if(counterRed > 11 && (counterRed - counterBlue) == 2 && counterBlue > 11){
-                    counterBlue = 0;
-                    counterRed = 0;
-                    gameRed++;
-                }
-                else if (counterRed == 11 && counterBlue < 10){
-                    counterBlue = 0;
-                    counterRed = 0;
-                    gameRed++;
-                }
-                else
-                    counterRed++;
-				redText.setText(" " + counterRed);
-                gameRedText.setText(" " + gameRed);
-                blueText.setText(counterBlue + " ");
-                gameBlueText.setText(gameBlue + " ");
-				
-			}
-		});
-	}
+
+        @Override
+        public void onClick(View arg0) {
+            if(counterRed > 11 && (counterRed - counterBlue) == 2 && counterBlue > 11){
+                counterBlue = 0;
+                counterRed = 0;
+                gameRed++;
+            }
+            else if (counterRed == 11 && counterBlue < 10){
+                counterBlue = 0;
+                counterRed = 0;
+                gameRed++;
+            }
+            else
+                counterRed++;
+
+            redText.setText(" " + counterRed);
+            gameRedText.setText(" " + gameRed);
+            blueText.setText(counterBlue + " ");
+            gameBlueText.setText(gameBlue + " ");
+
+        }
+    });
+}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

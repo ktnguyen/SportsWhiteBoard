@@ -19,6 +19,7 @@ import android.widget.TextView;
 public class Register extends Activity {
     EditText addBlue, addRed;
     Button bConfirm;
+    String blue_player, red_player;
 
 
     @Override
@@ -37,14 +38,20 @@ public class Register extends Activity {
                 String redName = addRed.getText().toString();
                 Player player = new Player(blueName, redName);
 
-
-
-
                 /*player.setBluePlayer(addBlue.getText().toString());
                 player.setRedPlayer(addRed.getText().toString());*/
 
+                blue_player = addBlue.getText().toString();
+                red_player = addRed.getText().toString();
 
-                Intent openMainAct = new Intent("com.kientn.sportswhiteboard.MAINACTIVITY");
+
+
+                Intent openMainAct;
+                        //= new Intent("com.kientn.sportswhiteboard.MAINACTIVITY");
+                openMainAct = new Intent(Register.this, MainActivity.class);
+
+                openMainAct.putExtra("blue", blue_player);
+                openMainAct.putExtra("red", red_player);
                 startActivity(openMainAct);
 
 
